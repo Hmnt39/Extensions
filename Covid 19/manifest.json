@@ -1,0 +1,11 @@
+{
+    "name": "Covid 19 Global Status",
+    "description": "Display Global Status of Covid 19 Pandemic",
+    "version": "0.1",
+    "manifest_version": 2,
+    "browser_action": {
+      "default_icon": "covid.png",
+      "default_title": "Covid 19 Global Status",
+      "default_popup": "popup.html"
+    }
+  }

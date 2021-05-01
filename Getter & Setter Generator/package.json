@@ -1,0 +1,75 @@
+{
+	"name": "python-getter---setter-generator",
+	"displayName": "Python Getter & Setter Generator",
+	"description": "Generate Python Getter and Setter for a class",
+	"publisher": "hemant39",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:getter-and-setter.generate",
+		"onCommand:getter-and-setter.generate_setter",
+		"onCommand:getter-and-setter.generate_getter"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "getter-and-setter.generate",
+				"title": "Generate Getter & Setter"
+			},
+			{
+				"command": "getter-and-setter.generate_setter",
+				"title": "Generate Setter"
+			},
+			{
+				"command": "getter-and-setter.generate_getter",
+				"title": "Generate Getter"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "resourceLangId == python",
+					"command": "getter-and-setter.generate",
+					"group": "yourgroup"
+				},
+				{
+					"when": "resourceLangId == python",
+					"command": "getter-and-setter.generate_setter",
+					"group": "yourgroup"
+				},
+				{
+					"when": "resourceLangId == python",
+					"command": "getter-and-setter.generate_getter",
+					"group": "yourgroup"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"@typescript-eslint/eslint-plugin": "^4.9.0",
+		"@typescript-eslint/parser": "^4.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	}
+}
